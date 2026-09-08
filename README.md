@@ -27,7 +27,7 @@ brew install katta
 as a formula source; the short name `shift7-ch/katta` is resolved to it. After tapping,
 `katta` behaves like any other formula.
 
-Installing also sets up bash completion (via `katta completion --shell bash`).
+Formulae rendered by CI also install bash completion (via `katta completion --shell bash`).
 
 ## Upgrade
 
