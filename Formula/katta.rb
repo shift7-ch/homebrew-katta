@@ -13,15 +13,13 @@
 class Katta < Formula
   desc "Admin CLI to configure a Katta Server including its S3 storage backend"
   homepage "https://katta.cloud/"
-  version "1.0.0"
+  url "https://github.com/shift7-ch/katta-clientlib/releases/download/1.0.0/katta"
+  sha256 "30a5b46b429b7351da0c63888b222379a73d9b86f2929dc0bac22bbbf113016b"
   license "AGPL-3.0-or-later"
 
   # Native image is currently built for Apple Silicon only.
   depends_on arch: :arm64
   depends_on :macos
-
-  url "https://github.com/shift7-ch/katta-clientlib/releases/download/1.0.0/katta"
-  sha256 "30a5b46b429b7351da0c63888b222379a73d9b86f2929dc0bac22bbbf113016b"
 
   def install
     bin.install "katta"
