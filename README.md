@@ -20,7 +20,7 @@ every tagged release, pinned to that release's macOS arm64 tarball and its `sha2
 
 ```bash
 brew tap shift7-ch/katta
-brew trust --formula shift7-ch/katta/katta
+brew trust shift7-ch/katta
 brew install katta
 ```
 
@@ -29,11 +29,10 @@ as a formula source; the short name `shift7-ch/katta` is resolved to it. After t
 `katta` behaves like any other formula.
 
 `brew trust` is required on recent Homebrew versions before a third-party tap's
-formula will load — otherwise `brew install` fails with *"Refusing to load formula
-… from untrusted tap"*. `--formula shift7-ch/katta/katta` trusts only this formula
-and the trust persists across CI updates. To trust every current and future
-formula from the tap instead, run `brew trust shift7-ch/katta`. See
-[docs.brew.sh/Tap-Trust](https://docs.brew.sh/Tap-Trust).
+formulae will load — otherwise `brew install` fails with *"Refusing to load formula
+… from untrusted tap"*. `brew trust shift7-ch/katta` trusts every current and
+future formula from the tap, so the formula CI pushes on each release keeps
+working. See [docs.brew.sh/Tap-Trust](https://docs.brew.sh/Tap-Trust).
 
 Formulae rendered by CI also install bash completion (via `katta completion --shell bash`).
 
@@ -48,7 +47,7 @@ brew upgrade katta
 
 ```bash
 brew uninstall katta
-brew untrust --formula shift7-ch/katta/katta
+brew untrust --tap shift7-ch/katta
 brew untap shift7-ch/katta
 ```
 
