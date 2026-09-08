@@ -47,7 +47,7 @@ brew upgrade katta
 
 ```bash
 brew uninstall katta
-brew untrust --tap shift7-ch/katta
+brew untrust shift7-ch/katta
 brew untap shift7-ch/katta
 ```
 
