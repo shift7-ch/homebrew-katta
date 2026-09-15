@@ -1,12 +1,14 @@
 # Seed formula for the Katta Admin CLI.
 #
-# This file is normally rendered and force-pushed by the cli.yml workflow in
-# shift7-ch/katta-clientlib on every tagged release, pinned to that release's
+# This file is normally rendered and pushed by the release.yml workflow in
+# shift7-ch/katta-admin-cli on every tagged release, pinned to that release's
 # katta-macos-arm64.tar.gz and its sha256. It is checked in here by hand so the
 # tap is usable before the first release built by that workflow; the next tagged
 # release will overwrite it.
 #
-# The 1.0.0 release predates the packaging workflow and ships a single bare
+# It points at the 1.0.0 release of shift7-ch/katta-clientlib, where the Admin CLI
+# was developed before it moved to shift7-ch/katta-admin-cli. That release
+# predates the packaging workflow and ships a single bare
 # arm64 Mach-O binary named "katta" rather than a tarball, so this formula
 # points straight at that asset and omits the shell-completion wiring the
 # rendered template carries.

@@ -8,13 +8,13 @@ Katta brings zero-config storage management and zero-knowledge key management fo
 configure a Katta Server including its S3 storage backend.
 
 The formula in [`Formula/katta.rb`](Formula/katta.rb) is rendered and pushed automatically
-by the [`cli.yml`](https://github.com/shift7-ch/katta-clientlib/blob/main/.github/workflows/cli.yml)
-workflow in [`shift7-ch/katta-clientlib`](https://github.com/shift7-ch/katta-clientlib) on
+by the [`release.yml`](https://github.com/shift7-ch/katta-admin-cli/blob/main/.github/workflows/release.yml)
+workflow in [`shift7-ch/katta-admin-cli`](https://github.com/shift7-ch/katta-admin-cli) on
 every tagged release, pinned to that release's macOS arm64 tarball and its `sha256`.
 
 > **Requirements:** macOS on Apple Silicon (arm64). The native image is not built for
 > Intel Macs. On Linux, install the `.deb` / `.rpm` package or the standalone binary from
-> the [GitHub Releases](https://github.com/shift7-ch/katta-clientlib/releases) instead.
+> the [GitHub Releases](https://github.com/shift7-ch/katta-admin-cli/releases) instead.
 
 ## Install
 
@@ -59,5 +59,5 @@ katta --help
 
 ## Usage
 
-See the [Admin CLI README](https://github.com/shift7-ch/katta-clientlib/blob/main/admin-cli/README.md)
+See the [Admin CLI README](https://github.com/shift7-ch/katta-admin-cli/blob/main/README.md)
 for `setup`, `storageprofile`, and `completion` command documentation.
