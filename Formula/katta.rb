@@ -1,30 +1,23 @@
-# Seed formula for the Katta Admin CLI.
-#
-# This file is normally rendered and pushed by the release.yml workflow in
-# shift7-ch/katta-admin-cli on every tagged release, pinned to that release's
-# katta-macos-arm64.tar.gz and its sha256. It is checked in here by hand so the
-# tap is usable before the first release built by that workflow; the next tagged
-# release will overwrite it.
-#
-# It points at the 1.0.0 release of shift7-ch/katta-clientlib, where the Admin CLI
-# was developed before it moved to shift7-ch/katta-admin-cli. That release
-# predates the packaging workflow and ships a single bare
-# arm64 Mach-O binary named "katta" rather than a tarball, so this formula
-# points straight at that asset and omits the shell-completion wiring the
-# rendered template carries.
+# Homebrew formula template for the Katta Admin CLI.
+# .github/workflows/release.yml substitutes 1.0.2 and 93f3b6bf31ee6fac9a59bb44a78686ce765412dea651b9ab3f5ba01689cad6c5
+# on tag builds and pushes the result to shift7-ch/homebrew-katta as Formula/katta.rb.
 class Katta < Formula
   desc "Admin CLI to configure a Katta Server including its S3 storage backend"
   homepage "https://katta.cloud/"
-  url "https://github.com/shift7-ch/katta-clientlib/releases/download/1.0.0/katta"
-  sha256 "30a5b46b429b7351da0c63888b222379a73d9b86f2929dc0bac22bbbf113016b"
+  version "1.0.2"
   license "AGPL-3.0-or-later"
 
   # Native image is currently built for Apple Silicon only.
   depends_on arch: :arm64
   depends_on :macos
 
+  url "https://github.com/shift7-ch/katta-admin-cli/releases/download/#{version}/katta-macos-arm64.tar.gz"
+  sha256 "93f3b6bf31ee6fac9a59bb44a78686ce765412dea651b9ab3f5ba01689cad6c5"
+
   def install
     bin.install "katta"
+    generate_completions_from_executable(bin/"katta", "completion", shells: [:bash],
+                                         shell_parameter_format: :arg)
   end
 
   test do
