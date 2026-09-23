@@ -1,10 +1,10 @@
 # Homebrew formula template for the Katta Admin CLI.
-# .github/workflows/release.yml substitutes 1.0.2 and 93f3b6bf31ee6fac9a59bb44a78686ce765412dea651b9ab3f5ba01689cad6c5
+# .github/workflows/release.yml substitutes 1.0.3 and 411f1b3c5b073e9842fff1d3e13c42263da8f664c557cb40cbe7149c6367928f
 # on tag builds and pushes the result to shift7-ch/homebrew-katta as Formula/katta.rb.
 class Katta < Formula
   desc "Admin CLI to configure a Katta Server including its S3 storage backend"
   homepage "https://katta.cloud/"
-  version "1.0.2"
+  version "1.0.3"
   license "AGPL-3.0-or-later"
 
   # Native image is currently built for Apple Silicon only.
@@ -12,7 +12,7 @@ class Katta < Formula
   depends_on :macos
 
   url "https://github.com/shift7-ch/katta-admin-cli/releases/download/#{version}/katta-macos-arm64.tar.gz"
-  sha256 "93f3b6bf31ee6fac9a59bb44a78686ce765412dea651b9ab3f5ba01689cad6c5"
+  sha256 "411f1b3c5b073e9842fff1d3e13c42263da8f664c557cb40cbe7149c6367928f"
 
   def install
     bin.install "katta"
